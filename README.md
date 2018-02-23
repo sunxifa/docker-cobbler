@@ -8,6 +8,7 @@
 
 - Dockerfile
 - start.sh
+- supervisord.d
 
 运行cobbler容器的compose文件：
 
