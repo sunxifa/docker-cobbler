@@ -2,27 +2,27 @@
 
 set -ex
 
-if [ ! $SERVER_IP ]
+if [[ ! $SERVER_IP ]]
 then
         echo "Please use $SERVER_IP set the IP address of the need to monitor."
         exit 1
-elif [ ! $DHCP_RANGE ]
+elif [[ ! $DHCP_RANGE ]]
 then
         echo "Please use $DHCP_RANGE set up DHCP network segment."
         exit 1
-elif [ ! $ROOT_PASSWORD ]
+elif [[ ! $ROOT_PASSWORD ]]
 then
         echo "Please use $ROOT_PASSWORD set the root password."
         exit 1
-elif [ ! $DHCP_SUBNET ]
+elif [[ ! $DHCP_SUBNET ]]
 then
         echo "Please use $DHCP_SUBNET set the dhcp subnet."
         exit 1
-elif [ ! $DHCP_ROUTER ]
+elif [[ ! $DHCP_ROUTER ]]
 then
         echo "Please use $DHCP_ROUTER set the dhcp router."
         exit 1
-elif [ ! $DHCP_DNS ]
+elif [[ ! $DHCP_DNS ]]
 then
         echo "Please use $DHCP_DNS set the dhcp dns."
         exit 1
@@ -44,8 +44,8 @@ else
         /usr/sbin/apachectl
         /usr/bin/cobblerd
 
-        cobbler sync
         cobbler get-loaders
+        cobbler sync
 
         pkill cobblerd
         pkill httpd
